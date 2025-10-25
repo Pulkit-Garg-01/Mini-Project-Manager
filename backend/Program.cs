@@ -68,9 +68,10 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowReactApp", // Give the policy a name
         policy =>
         {
-            policy.WithOrigins("http://localhost:5173") // Replace with your React app's actual origin
+            policy.WithOrigins("http://localhost:3000") // Replace with your React app's actual origin
                   .AllowAnyHeader()
-                  .AllowAnyMethod();
+                  .AllowAnyMethod()
+                  .AllowCredentials();
             // In production, consider .WithOrigins("YOUR_FRONTEND_URL")
             // For development using wildcard origins like AllowAnyOrigin() might be easier initially
             // policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
@@ -141,7 +142,7 @@ app.UseHttpsRedirection();
 
 // Enable CORS using the policy defined above
 app.UseCors("AllowReactApp"); // Use the specific policy name
-
+app.UseCors("AllowFrontend");
 // Enable Authentication middleware (must come before Authorization)
 app.UseAuthentication();
 

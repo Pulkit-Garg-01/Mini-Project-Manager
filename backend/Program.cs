@@ -80,6 +80,8 @@ builder.Services.AddCors(options =>
 
 
 // Add Swagger/OpenAPI for API documentation and testing (optional but recommended)
+// Add this with other service registrations
+builder.Services.AddScoped<ISchedulerService, SchedulerService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {

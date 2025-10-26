@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Project } from '../../types/project.types';
 import './Project.css';
+import { Trash2Icon } from 'lucide-react';
 
 interface ProjectCardProps {
   project: Project;
@@ -31,7 +32,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onDelete }) => {
           className="btn-delete"
           title="Delete project"
         >
-          ×
+          <Trash2Icon size={20} />
         </button>
       </div>
       

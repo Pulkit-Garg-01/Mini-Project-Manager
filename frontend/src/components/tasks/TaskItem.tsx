@@ -1,6 +1,7 @@
 import React from 'react';
 import { Task } from '../../types/task.types';
 import './Task.css';
+import { Trash2Icon } from 'lucide-react';
 
 interface TaskItemProps {
   task: Task;
@@ -38,7 +39,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onToggle, onDelete }) => {
         className="task-delete-btn"
         title="Delete task"
       >
-        ×
+        <Trash2Icon size={20} />
       </button>
     </div>
   );

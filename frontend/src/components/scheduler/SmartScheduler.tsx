@@ -150,9 +150,9 @@ const SmartScheduler: React.FC<SmartSchedulerProps> = ({
                   <p className="help-text">Select tasks that should be scheduled first</p>
                   <div className="task-checkboxes">
                     {incompleteTasks.map(task => (
-                      <label key={task.id} className="task-checkbox">
-                        <input
-                          type="checkbox"
+                      <div className='task-checkbox-item' key={task.id}>
+                      <input
+                        type="checkbox"
                           checked={selectedPriorityTasks.includes(task.id)}
                           onChange={() => togglePriorityTask(task.id)}
                         />
@@ -162,7 +162,7 @@ const SmartScheduler: React.FC<SmartSchedulerProps> = ({
                             Due: {new Date(task.dueDate).toLocaleDateString()}
                           </span>
                         )}
-                      </label>
+                      </div>
                     ))}
                   </div>
                 </div>

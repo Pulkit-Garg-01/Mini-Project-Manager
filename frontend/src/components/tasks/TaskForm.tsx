@@ -36,6 +36,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onSubmit, onCancel }) => {
     <div className="task-form">
       <form onSubmit={formik.handleSubmit}>
         <div className="form-group">
+          <span>Title</span>
           <input
             id="title"
             type="text"
@@ -53,6 +54,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onSubmit, onCancel }) => {
         </div>
 
         <div className="form-group">
+          <span>Due Date</span>
           <input
             id="dueDate"
             type="date"
@@ -67,7 +69,8 @@ const TaskForm: React.FC<TaskFormProps> = ({ onSubmit, onCancel }) => {
             <div className="field-error">{formik.errors.dueDate}</div>
           )}
         </div>
-
+          <div>
+            <br />
         <div className="form-actions">
           <button
             type="button"
@@ -83,6 +86,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onSubmit, onCancel }) => {
           >
             {formik.isSubmitting ? 'Adding...' : 'Add Task'}
           </button>
+        </div>
         </div>
       </form>
     </div>

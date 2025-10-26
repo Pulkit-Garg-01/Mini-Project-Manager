@@ -142,8 +142,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 // Enable CORS using the policy defined above
-app.UseCors("AllowReactApp"); // Use the specific policy name
-app.UseCors("AllowFrontend");
+app.UseCors("AllowAll"); // Use the specific policy name
+// app.UseCors("AllowFrontend");
 // Enable Authentication middleware (must come before Authorization)
 app.UseAuthentication();
 

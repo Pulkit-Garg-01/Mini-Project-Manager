@@ -65,13 +65,12 @@ builder.Services.AddAuthorization();
 // IMPORTANT: For production, be more restrictive than AllowAnyOrigin()
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowReactApp", // Give the policy a name
+    options.AddPolicy("AllowAll", // Give the policy a name
         policy =>
         {
-            policy.WithOrigins("http://localhost:3000") // Replace with your React app's actual origin
+            policy.AllowAnyOrigin() // Replace with your React app's actual origin
                   .AllowAnyHeader()
-                  .AllowAnyMethod()
-                  .AllowCredentials();
+                  .AllowAnyMethod();
             // In production, consider .WithOrigins("YOUR_FRONTEND_URL")
             // For development using wildcard origins like AllowAnyOrigin() might be easier initially
             // policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
@@ -153,6 +152,11 @@ app.UseAuthorization();
 
 // Map controller endpoints
 app.MapControllers();
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.Migrate();
+}
 
 // --- 4. Run the Application ---
 app.Run();

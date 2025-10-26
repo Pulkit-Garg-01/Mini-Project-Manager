@@ -166,3 +166,4 @@
 /Users/pulkitgarg/Desktop/dtn/backend/obj/Debug/net8.0/backend.pdb
 /Users/pulkitgarg/Desktop/dtn/backend/obj/Debug/net8.0/backend.genruntimeconfig.cache
 /Users/pulkitgarg/Desktop/dtn/backend/obj/Debug/net8.0/ref/backend.dll
+/Users/pulkitgarg/Desktop/dtn/backend/obj/Debug/net8.0/backend.sourcelink.json

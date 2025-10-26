@@ -88,7 +88,7 @@ const SmartScheduler: React.FC<SmartSchedulerProps> = ({
     <div className="scheduler-modal">
       <div className="scheduler-content">
         <div className="scheduler-header">
-          <h2>🤖 Smart Scheduler</h2>
+          <h2>Smart Scheduler</h2>
           <button onClick={onClose} className="close-btn">×</button>
         </div>
 
@@ -177,7 +177,7 @@ const SmartScheduler: React.FC<SmartSchedulerProps> = ({
                   disabled={loading || incompleteTasks.length === 0}
                   className="btn-primary"
                 >
-                  {loading ? '🔄 Generating Schedule...' : '✨ Generate Schedule'}
+                  {loading ? '🔄 Generating Schedule...' : 'Generate Schedule'}
                 </button>
               </div>
             </form>

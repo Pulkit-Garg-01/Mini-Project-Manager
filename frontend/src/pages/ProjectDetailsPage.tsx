@@ -66,7 +66,7 @@ const ProjectDetailsPage: React.FC = () => {
             className="btn-scheduler"
             disabled={project.tasks.filter(t => !t.isCompleted).length === 0}
           >
-            🤖 Smart Schedule
+            Smart Schedule
           </button>
         </div>
       </div>
